@@ -1,5 +1,13 @@
 # infer (development version)
 
+* Added `net_revenue_test()`, a customer-level wrapper for randomized
+  experiments. Given a customer cohort, exposure times, paid orders, partial
+  refunds, a common cutoff, and a fixed observation window, it keeps exactly
+  one net revenue value per mature customer (zero-order customers included),
+  reports immature customers separately, aggregates partial refunds to the
+  order level before joining, and runs the native difference-in-means,
+  customer-level permutation, and two-sided p-value workflow.
+
 # infer 1.1.0
 
 * Fixed bug where adding `shade_confidence_interval(NULL)` or `shade_p_value(NULL)` 
